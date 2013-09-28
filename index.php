@@ -74,7 +74,7 @@ $status3 = "OFF";
     <table style="width: 494px; height: 286px;" class=" table table-bordered table-striped table-hover" align="center">
 		<tr>
 			<td class="text-center" style="width: 159px; height: 45px"><span lang="pt">Status</span></td>
-			<td style="width: 68px; height: 45px;"><span lang="pt">&nbsp;ON</span></td>
+			<td style="width: 68px; height: 45px;"><span lang="pt">&nbsp;<?php echo("$status3"); ?></span></td>
 		</tr>
 		<tr>
 			<td class="text-center" style="width: 159px; height: 45px">Number Of Connections</td>
