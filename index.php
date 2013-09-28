@@ -23,7 +23,22 @@
   </head>
   <body>
 <?php
+function curl_get_file_contents($URL)
+    {
+        $c = curl_init();
+		curl_setopt($c, CURLOPT_CONNECTTIMEOUT ,3); 
+        curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($c, CURLOPT_URL, $URL);
+        $contents = curl_exec($c);
+        curl_close($c);
 
+        if ($contents) return $contents;
+            else return FALSE;
+    }
+
+$http_status = curl_get_file_contents("http://IPHERE/status.php"); // edit the URL to your status.php location
+if ($http_status == "ON")
+{
 include_once("Bitcoin.php");
 
 $rpcUser = "userhere"; // RPC Username from your node.
@@ -37,7 +52,13 @@ $status = file_get_contents('http://www.example.com/'); // Working on this, but 
 $blocks = $bitcoin->getblockcount(); 
 $connect = $bitcoin->getconnectioncount();
 $diff = $bitcoin->getdifficulty();
-
+$status3 = "ON";
+}else {
+$blocks = "OFF"; 
+$connect = "OFF"; 
+$diff = "OFF";
+$status3 = "OFF"; 
+}
 ?>
     <div id="container" class="container" style="margin-bottom: 20px">
 	    <table style="width: 100%; height: 75px;">
