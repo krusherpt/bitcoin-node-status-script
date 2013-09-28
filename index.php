@@ -36,7 +36,6 @@ $status = file_get_contents('http://www.example.com/'); // Working on this, but 
 $blocks = $bitcoin->getblockcount(); 
 $connect = $bitcoin->getconnectioncount();
 $diff = $bitcoin->getdifficulty();
-$status3 = "ON";
 ?>
     <div id="container" class="container" style="margin-bottom: 20px">
 	    <table style="width: 100%; height: 75px;">
